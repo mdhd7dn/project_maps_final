@@ -3,7 +3,11 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:my_case/core/moveing_rout/approutes.dart';
 import 'package:my_case/featuers/cases/presenrtaion/bindings/casebinding.dart';
 import 'package:my_case/featuers/cases/presenrtaion/pages/case_screen.dart';
+import 'package:my_case/featuers/users/presenrtaion/pages/auth/account_screens/address_courts.dart';
+import 'package:my_case/featuers/users/presenrtaion/pages/auth/account_screens/my_cases.dart';
 import 'package:my_case/featuers/users/presenrtaion/pages/auth/account_screen.dart';
+import 'package:my_case/featuers/users/presenrtaion/pages/auth/account_screens/my_details.dart';
+import 'package:my_case/featuers/users/presenrtaion/pages/auth/account_screens/payment_methods.dart';
 import 'package:my_case/featuers/users/presenrtaion/pages/auth/enter_digit_code.dart';
 import 'package:my_case/featuers/users/presenrtaion/pages/homepage.dart';
 import 'package:my_case/featuers/users/presenrtaion/pages/auth/login_screen.dart';
@@ -58,5 +62,25 @@ List<GetPage<dynamic>>? getPages = [
     name: AppRoutes.account,
     page: () => AccountScreen(),
     transition: Transition.zoom,
-  )
+  ),
+  GetPage(
+    name: AppRoutes.mycases,
+    page: () => MyCases(),
+    transition: Transition.zoom,
+  ),
+  GetPage(
+    name: AppRoutes.myDetails,
+    page: () => MyDetails(),
+    transition: Transition.zoom,
+  ),
+  GetPage(
+    name: AppRoutes.addressCourts,
+    page: () => AddressCourts(),
+    transition: Transition.zoom,
+  ),
+  GetPage(
+    name: AppRoutes.paymentMethods,
+    page: () => PaymentMethods(),
+    transition: Transition.zoom,
+  ),
 ];

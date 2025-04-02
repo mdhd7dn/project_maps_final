@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:my_case/core/moveing_rout/approutes.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -41,14 +46,35 @@ class AccountScreen extends StatelessWidget {
                 indent: 24.w,
                 endIndent: 24.w),
             _buildAccountOption(
-                context, 'My Cases', Icons.inventory_2_outlined),
-            _buildDivider(),
-            _buildAccountOption(context, 'My Details', Icons.badge_outlined),
-            _buildDivider(),
-            _buildAccountOption(context, 'Address Courts', Icons.home_outlined),
+              context,
+              'My Cases',
+              Icons.inventory_2_outlined,
+              onTap: () => Get.toNamed(AppRoutes.mycases), // الانتقال عند الضغط
+            ),
             _buildDivider(),
             _buildAccountOption(
-                context, 'Payment Methods', Icons.credit_card_outlined),
+              context,
+              'My Details',
+              Icons.badge_outlined,
+              onTap: () =>
+                  Get.toNamed(AppRoutes.myDetails), // الانتقال عند الضغط
+            ),
+            _buildDivider(),
+            _buildAccountOption(
+              context,
+              'Address Courts',
+              Icons.home_outlined,
+              onTap: () =>
+                  Get.toNamed(AppRoutes.addressCourts), // الانتقال عند الضغط
+            ),
+            _buildDivider(),
+            _buildAccountOption(
+              context,
+              'Payment Methods',
+              Icons.credit_card_outlined,
+              onTap: () =>
+                  Get.toNamed(AppRoutes.paymentMethods), // الانتقال عند الضغط
+            ),
             _buildDivider(),
             _buildAccountOption(
                 context, 'Notifications', Icons.notifications_outlined),
@@ -60,7 +86,18 @@ class AccountScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 24.w, top: 32.h),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.defaultDialog(
+                    title: "Logout",
+                    middleText: "Are you sure you want to logout?",
+                    textCancel: "Cancel",
+                    textConfirm: "Confirm",
+                    confirmTextColor: Colors.white,
+                    onConfirm: () {
+                      exit(0); // إغلاق التطبيق
+                    },
+                  );
+                },
                 child: Row(
                   children: [
                     Icon(Icons.logout, color: Colors.red, size: 24.sp),
@@ -68,9 +105,10 @@ class AccountScreen extends StatelessWidget {
                     Text(
                       'Logout',
                       style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.red,
-                          fontWeight: FontWeight.w500),
+                        fontSize: 16.sp,
+                        color: Colors.red,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ],
                 ),
@@ -82,10 +120,10 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAccountOption(
-      BuildContext context, String title, IconData icon) {
+  Widget _buildAccountOption(BuildContext context, String title, IconData icon,
+      {VoidCallback? onTap}) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap, // هنا يتم تفعيل التنقل عند الضغط
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
         child: Row(

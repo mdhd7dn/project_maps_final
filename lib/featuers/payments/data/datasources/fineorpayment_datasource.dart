@@ -12,7 +12,8 @@ abstract class FineOrPaymentRemoteDataSource {
 
 class FineOrPaymentRemoteDataSourceImpl
     implements FineOrPaymentRemoteDataSource {
-  final String baseUrl = "https://yourapi.com/api/payments";
+  final String baseUrl =
+      "http://samerabosamra-001-site1.mtempurl.com/api/payments";
 
   @override
   Future<List<FineOrPaymentModel>> getFinesOrPayments() async {

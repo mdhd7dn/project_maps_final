@@ -8,4 +8,8 @@ class AppRoutes {
   static const String restpasswordandemail = "/restpasswordandemail";
   static const String cases = "/cases";
   static const String account = "/account";
+  static const String mycases = "/mycases";
+  static const String myDetails = "/myDetails";
+  static const String addressCourts = "/addressCourts";
+  static const String paymentMethods = "/paymentMethods";
 }

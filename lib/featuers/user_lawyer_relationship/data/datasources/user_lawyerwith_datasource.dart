@@ -15,7 +15,7 @@ abstract class UserLawyerWithRemoteDataSource {
 class UserLawyerWithRemoteDataSourceImpl
     implements UserLawyerWithRemoteDataSource {
   final String baseUrl =
-      "https://yourapi.com/api/userLawyerWiths"; // 🔹 غيّر هذا بالـ API الخاص بك
+      "http://samerabosamra-001-site1.mtempurl.com/api/userLawyerWiths";
 
   @override
   Future<List<UserLawyerWithModel>> getUserLawyerWiths() async {
