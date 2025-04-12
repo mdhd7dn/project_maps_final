@@ -72,47 +72,47 @@ class UserController extends GetxController {
     }
   }
 
-  Future<void> signInWithFacebook() async {
-    try {
-      // _loading = true;
-      update();
+  // Future<void> signInWithFacebook() async {
+  //   try {
+  //     // _loading = true;
+  //     update();
 
-      // final LoginResult result = await FacebookAuth.instance.login();
-      // final OAuthCredential credential = FacebookAuthProvider.credential(result.accessToken!.token);
-      // await FirebaseAuth.instance.signInWithCredential(credential);
+  //     // final LoginResult result = await FacebookAuth.instance.login();
+  //     // final OAuthCredential credential = FacebookAuthProvider.credential(result.accessToken!.token);
+  //     // await FirebaseAuth.instance.signInWithCredential(credential);
 
-      // _loading = false;
-      update();
-      // Get.offAllNamed(AppRoutes.home);
-    } catch (e) {
-      // _loading = false;
-      update();
-      Get.snackbar('Error', e.toString());
-    }
-  }
+  //     // _loading = false;
+  //     update();
+  //     // Get.offAllNamed(AppRoutes.home);
+  //   } catch (e) {
+  //     // _loading = false;
+  //     update();
+  //     Get.snackbar('Error', e.toString());
+  //   }
+  // }
 
-  Future<void> signInWithGoogle() async {
-    try {
-      // _loading = true;
-      update();
+  // Future<void> signInWithGoogle() async {
+  //   try {
+  //     // _loading = true;
+  //     update();
 
-      // final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      // final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
-      // final credential = GoogleAuthProvider.credential(
-      //   accessToken: googleAuth.accessToken,
-      //   idToken: googleAuth.idToken,
-      // );
-      // await FirebaseAuth.instance.signInWithCredential(credential);
+  //     // final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  //     // final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+  //     // final credential = GoogleAuthProvider.credential(
+  //     //   accessToken: googleAuth.accessToken,
+  //     //   idToken: googleAuth.idToken,
+  //     // );
+  //     // await FirebaseAuth.instance.signInWithCredential(credential);
 
-      // _loading = false;
-      update();
-      // Get.offAllNamed(AppRoutes.home);
-    } catch (e) {
-      // _loading = false;
-      update();
-      Get.snackbar('Error', e.toString());
-    }
-  }
+  //     // _loading = false;
+  //     update();
+  //     // Get.offAllNamed(AppRoutes.home);
+  //   } catch (e) {
+  //     // _loading = false;
+  //     update();
+  //     Get.snackbar('Error', e.toString());
+  //   }
+  // }
 
   Future<void> login(String email, String password) async {
     _loading = true;
@@ -132,11 +132,11 @@ class UserController extends GetxController {
         await AuthService.saveToken(_token);
         Get.to(AppRoutes.home);
       } else {
-        Get.snackbar("Error", "Login failed: ${response.body}");
+        // Get.snackbar("Error", "Login failed: ${response.body}");
         Get.to(AppRoutes.home);
       }
     } catch (e) {
-      Get.snackbar("Error", "Exception: $e");
+      // Get.snackbar("Error", "Exception: $e");
       Get.offAllNamed(AppRoutes.home);
     } finally {
       _loading = false;

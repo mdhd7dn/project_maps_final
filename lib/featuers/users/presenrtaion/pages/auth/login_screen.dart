@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
           onTap: controller.loading
               ? null
               : () {
-                  controller.signInWithGoogle();
+                  // controller.signInWithGoogle();
                 },
           child: Container(
             width: 341.w,
@@ -257,7 +257,7 @@ Widget _facebookLoginButton() {
         onTap: controller.loading
             ? null
             : () {
-                controller.signInWithGoogle();
+                // controller.signInWithGoogle();
               },
         child: Container(
           width: 341.w,
